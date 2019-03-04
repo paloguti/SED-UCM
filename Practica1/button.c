@@ -85,43 +85,27 @@ void Eint4567_ISR(void)
 	/*Identificar la interrupcion*/
 	which_int = rEXTINTPND;
 	leds_off();
-	int aux2 = rPDATG & 0x00000080; //1100 0000
-	int aux3 = rPDATG & 0x00000040; //1100 0000
-	if ( aux2 == 0 || aux3 == 0) { // si alguno está pulsado
-		while(aux2 == 0 || aux3 == 0){
-			aux2 = rPDATG & 0x00000080; //1100 0000
-			aux3 = rPDATG & 0x00000040; //1100 0000
-		}
-	}
 	/* Actualizar simbolo*/
 	switch (which_int) {
 	//si la interr viene de bit 2 a 1 -> EINT6
 	   case 4 :
 		//Conmutamos LEDs
 		led1_on();
-		contador++;
+		contador = ( contador + 1 ) % 16 ;
 	    break;
 
 		//si la interr viene de bit 3 a 1 -> EINT7
 	   case 8  :
-	    //statement(s);
-		led2_on();
-		contador--;
-	    break;
+	      //statement(s);
+		   led2_on();
+		   contador = (contador -1 ) % 16 ;
+	      break;
 
 	}
 	// muestra el simbolo en el display
-	int num = contador;
-	/*if (contador < 0) {
-		num = 16 + contador;
-	}
-	else {
-		num = contador;
-	}*/
-	num &= ((unsigned int)(~0x0))>>(32-4);
-	D8Led_symbol(num);
+	D8Led_symbol(contador);
 	// espera 100ms para evitar rebotes
-	DelayMs(100);
+	
 	// borra los bits en EXTINTPND  
 	// borra el bit pendiente en INTPND
 	rEXTINTPND = 0xC;
