@@ -6,6 +6,9 @@
 extern void leds_off();
 extern void led1_on();
 extern void keyboard_init();
+extern void timer_init();
+
+int contador;
 
 //Declarar funciones externas de inicialización
 
@@ -14,6 +17,7 @@ void Main(void);
 /*--- codigo de funciones ---*/
 void Main(void)
 {
+	contador = 0;
 	/* Inicializar controladores */
 	sys_init(); // Inicializacion de la placa, interrupciones y puertos
 	// Inicializacion del temporizador
@@ -25,7 +29,8 @@ void Main(void)
 	timer_init();
 
 	leds_off();
-	led1_on();
+	//leds_on();
+
 	while (1); // espera
 
 }

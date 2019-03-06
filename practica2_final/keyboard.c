@@ -7,6 +7,7 @@
 /*--- Variables globales ---*/
 volatile UCHAR *keyboard_base = (UCHAR *)0x06000000;
 int key;
+extern int contador;
 /*--- Funciones externas ---*/
 void D8Led_symbol(int value);
 /*--- Declaracion de funciones ---*/
@@ -109,6 +110,7 @@ int key_read()
 		case 0xE:  value = 15; break;
 	}
 
+	contador = value;
 	return value;
 
 }

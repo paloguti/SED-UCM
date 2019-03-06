@@ -52,11 +52,16 @@ void Eint4567_init(void)
 	rI_ISPC = 0x3ffffff;
 }
 
-/*COMENTAR PARA LA PARTE DEL 8-SEGMENTOS
-DESCOMENTAR PARA LA PRIMERA PARTE CON INTERRUPCIONES
+/*
+DESCOMENTAR PARA LA PARTE DEL 8-SEGMENTOS
+COMENTAR PARA LA PRIMERA PARTE CON INTERRUPCIONES
 */
+int which_int;
 void Eint4567_ISR(void)
 {
+	/*Identificar la interrupcion*/
+	which_int = rEXTINTPND;
+	//leds_off();
 	int aux2 = rPDATG & 0x00000080; //1100 0000
 	int aux3 = rPDATG & 0x00000040; //1100 0000
 	if ( aux2 == 0 || aux3 == 0) { // si alguno está pulsado
@@ -65,15 +70,40 @@ void Eint4567_ISR(void)
 			aux3 = rPDATG & 0x00000040; //1100 0000
 		}
 	}
-	//Conmutamos LEDs
-	leds_switch();
-	//Delay para eliminar rebotes
+	/* Actualizar simbolo*/
+	switch (which_int) {
+	//si la interr viene de bit 2 a 1 -> EINT6
+	   case 4 :
+		//Conmutamos LEDs
+		//led1_on();
+		contador++;
+	    break;
+
+		//si la interr viene de bit 3 a 1 -> EINT7
+	   case 8  :
+	    //statement(s);
+		//led2_on();
+		contador--;
+	    break;
+
+	}
+	// muestra el simbolo en el display
+	int num = contador;
+	/*if (contador < 0) {
+		num = 16 + contador;
+	}
+	else {
+		num = contador;
+	}*/
+	num &= ((unsigned int)(~0x0))>>(32-4);
+	D8Led_symbol(num);
+	// espera 100ms para evitar rebotes
 	DelayMs(100);
-	/*Atendemos interrupciones*/
-	//Borramos EXTINTPND ambas líneas EINT7 y EINT6
+	// borra los bits en EXTINTPND
+	// borra el bit pendiente en INTPND
 	rEXTINTPND = 0xC;
 	//Borramos INTPND usando ISPC
-	rI_ISPC = 0x3ffffff;
+	rI_ISPC = BIT_EINT4567;
 }
 
 
