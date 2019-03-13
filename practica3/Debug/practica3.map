@@ -1,0 +1,281 @@
+Archive member included because of file (symbol)
+
+C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+                              ./main.o (golden_at24c04_bytewrite)
+C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+                              ./main.o (golden_iic_init)
+
+Allocating common symbols
+Common symbol       size              file
+
+val                 0x4               ./main.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD ./commonEclipse/system.o
+LOAD ./8led.o
+LOAD ./at24C04.o
+LOAD ./iic.o
+LOAD ./init.o
+LOAD ./main.o
+LOAD C:\software\electronica\ARM\EclipseARM\eclipse\/../sourcery-g++-lite-arm-2011.03/arm-none-eabi/lib\libc.a
+LOAD C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a
+LOAD C:\software\electronica\ARM\EclipseARM\eclipse\/../sourcery-g++-lite-arm-2011.03/lib/gcc/arm-none-eabi/4.5.2\libgcc.a
+LOAD C:\software\electronica\ARM\EclipseARM\eclipse\/../sourcery-g++-lite-arm-2011.03/arm-none-eabi/lib\libnosys.a
+START GROUP
+LOAD C:\software\electronica\ARM\EclipseARM\eclipse\/../sourcery-g++-lite-arm-2011.03/lib/gcc/arm-none-eabi/4.5.2\libgcc.a
+LOAD C:\software\electronica\ARM\EclipseARM\eclipse\/../sourcery-g++-lite-arm-2011.03/arm-none-eabi/lib\libc.a
+END GROUP
+                0x0c100000                . = 0xc100000
+                0x0c100000                _image_start = .
+                0x0c100000                _code_start = .
+
+.text           0x0c100000      0xf64
+ *(.text)
+ .text          0x0c100000      0x328 ./commonEclipse/system.o
+                0x0c100000                DelayMs
+                0x0c100064                sys_init
+                0x0c1001a8                port_init
+ .text          0x0c100328       0x60 ./8led.o
+                0x0c100328                D8Led_init
+                0x0c10034c                D8Led_symbol
+ .text          0x0c100388      0x130 ./at24C04.o
+                0x0c100388                at24c04_bytewrite
+                0x0c100408                at24c04_byteread
+ .text          0x0c1004b8      0x460 ./iic.o
+                0x0c1004b8                iic_init
+                0x0c1005b8                iic_putByte_start
+                0x0c100634                iic_putByte
+                0x0c100698                iic_putByte_stop
+                0x0c100730                iic_getByte_start
+                0x0c1007c0                iic_getByte
+                0x0c10081c                iic_getByte_stop
+ .text          0x0c100918       0x1c ./init.o
+                0x0c100918                start
+ .text          0x0c100934      0x154 ./main.o
+                0x0c100934                Main
+ .text          0x0c100a88      0x128 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+                0x0c100a88                golden_at24c04_bytewrite
+                0x0c100b04                golden_at24c04_byteread
+ .text          0x0c100bb0      0x3b4 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+                0x0c100bb0                golden_iic_init
+                0x0c100c78                golden_iic_putByte_start
+                0x0c100ce8                golden_iic_putByte
+                0x0c100d48                golden_iic_putByte_stop
+                0x0c100dd4                golden_iic_getByte_start
+                0x0c100e44                golden_iic_getByte
+                0x0c100e9c                golden_iic_getByte_stop
+                0x0c100f64                _code_end = .
+                0x00000f64                _code_size = SIZEOF (.text)
+                0x0c100f64                _data_start = .
+
+.glue_7         0x0c100f64        0x0
+ .glue_7        0x00000000        0x0 linker stubs
+
+.glue_7t        0x0c100f64        0x0
+ .glue_7t       0x00000000        0x0 linker stubs
+
+.vfp11_veneer   0x0c100f64        0x0
+ .vfp11_veneer  0x00000000        0x0 linker stubs
+
+.v4_bx          0x0c100f64        0x0
+ .v4_bx         0x00000000        0x0 linker stubs
+
+.rodata         0x0c100f64        0x0
+ *(.rodata)
+
+.data           0x0c100f64       0x4c
+ *(.data)
+ .data          0x0c100f64        0xc ./commonEclipse/system.o
+                0x0c100f6c                mclk
+ .data          0x0c100f70       0x40 ./8led.o
+                0x0c100f70                Symbol
+ .data          0x0c100fb0        0x0 ./at24C04.o
+ .data          0x0c100fb0        0x0 ./iic.o
+ .data          0x0c100fb0        0x0 ./init.o
+ .data          0x0c100fb0        0x0 ./main.o
+ .data          0x0c100fb0        0x0 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .data          0x0c100fb0        0x0 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.bss            0x0c100fb0        0x4
+ *(.bss)
+ .bss           0x0c100fb0        0x0 ./commonEclipse/system.o
+ .bss           0x0c100fb0        0x0 ./8led.o
+ .bss           0x0c100fb0        0x0 ./at24C04.o
+ .bss           0x0c100fb0        0x0 ./iic.o
+ .bss           0x0c100fb0        0x0 ./init.o
+ .bss           0x0c100fb0        0x0 ./main.o
+ .bss           0x0c100fb0        0x0 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .bss           0x0c100fb0        0x0 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+ COMMON         0x0c100fb0        0x4 ./main.o
+                0x0c100fb0                val
+                0x0c100fb4                _data_end = .
+                0x00000050                _data_size = ((SIZEOF (.rodata) + SIZEOF (.data)) + SIZEOF (.bss))
+                0x00000fb4                _total_size = (_code_size + _data_size)
+                0x0c100fb4                _image_end = .
+                0x0c100fb4                end = .
+OUTPUT(practica3.elf elf32-littlearm)
+
+.debug_abbrev   0x00000000      0x4c5
+ .debug_abbrev  0x00000000       0xca ./commonEclipse/system.o
+ .debug_abbrev  0x000000ca       0x9b ./8led.o
+ .debug_abbrev  0x00000165       0x77 ./at24C04.o
+ .debug_abbrev  0x000001dc       0xd3 ./iic.o
+ .debug_abbrev  0x000002af       0x14 ./init.o
+ .debug_abbrev  0x000002c3       0xb8 ./main.o
+ .debug_abbrev  0x0000037b       0x77 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_abbrev  0x000003f2       0xd3 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_info     0x00000000      0x866
+ .debug_info    0x00000000      0x120 ./commonEclipse/system.o
+ .debug_info    0x00000120       0xa4 ./8led.o
+ .debug_info    0x000001c4      0x106 ./at24C04.o
+ .debug_info    0x000002ca      0x1a5 ./iic.o
+ .debug_info    0x0000046f       0x60 ./init.o
+ .debug_info    0x000004cf       0xec ./main.o
+ .debug_info    0x000005bb      0x106 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_info    0x000006c1      0x1a5 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_line     0x00000000      0x5ae
+ .debug_line    0x00000000       0xbe ./commonEclipse/system.o
+ .debug_line    0x000000be       0x86 ./8led.o
+ .debug_line    0x00000144       0xa6 ./at24C04.o
+ .debug_line    0x000001ea       0xfb ./iic.o
+ .debug_line    0x000002e5       0x3d ./init.o
+ .debug_line    0x00000322       0xec ./main.o
+ .debug_line    0x0000040e       0xaa C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_line    0x000004b8       0xf6 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_macinfo  0x00000000    0x1cbab
+ .debug_macinfo
+                0x00000000     0x4eb5 ./commonEclipse/system.o
+ .debug_macinfo
+                0x00004eb5     0x543d ./8led.o
+ .debug_macinfo
+                0x0000a2f2     0x2273 ./at24C04.o
+ .debug_macinfo
+                0x0000c565     0x500a ./iic.o
+ .debug_macinfo
+                0x0001156f     0x2a70 ./main.o
+ .debug_macinfo
+                0x00013fdf     0x41ce C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_macinfo
+                0x000181ad     0x49fe C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_loc      0x00000000      0x420
+ .debug_loc     0x00000000       0x84 ./commonEclipse/system.o
+ .debug_loc     0x00000084       0x58 ./8led.o
+ .debug_loc     0x000000dc       0x58 ./at24C04.o
+ .debug_loc     0x00000134      0x134 ./iic.o
+ .debug_loc     0x00000268       0x2c ./main.o
+ .debug_loc     0x00000294       0x58 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_loc     0x000002ec      0x134 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_pubnames
+                0x00000000      0x285
+ .debug_pubnames
+                0x00000000       0x42 ./commonEclipse/system.o
+ .debug_pubnames
+                0x00000042       0x3d ./8led.o
+ .debug_pubnames
+                0x0000007f       0x3d ./at24C04.o
+ .debug_pubnames
+                0x000000bc       0x95 ./iic.o
+ .debug_pubnames
+                0x00000151       0x23 ./main.o
+ .debug_pubnames
+                0x00000174       0x4b C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_pubnames
+                0x000001bf       0xc6 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_pubtypes
+                0x00000000       0xf2
+ .debug_pubtypes
+                0x00000000       0x1d ./commonEclipse/system.o
+ .debug_pubtypes
+                0x0000001d       0x27 ./at24C04.o
+ .debug_pubtypes
+                0x00000044       0x30 ./iic.o
+ .debug_pubtypes
+                0x00000074       0x27 ./main.o
+ .debug_pubtypes
+                0x0000009b       0x27 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_pubtypes
+                0x000000c2       0x30 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_aranges  0x00000000      0x100
+ .debug_aranges
+                0x00000000       0x20 ./commonEclipse/system.o
+ .debug_aranges
+                0x00000020       0x20 ./8led.o
+ .debug_aranges
+                0x00000040       0x20 ./at24C04.o
+ .debug_aranges
+                0x00000060       0x20 ./iic.o
+ .debug_aranges
+                0x00000080       0x20 ./init.o
+ .debug_aranges
+                0x000000a0       0x20 ./main.o
+ .debug_aranges
+                0x000000c0       0x20 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_aranges
+                0x000000e0       0x20 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_str      0x00000000      0x24c
+ .debug_str     0x00000000       0xe4 ./commonEclipse/system.o
+                                 0xfd (size before relaxing)
+ .debug_str     0x000000e4       0x2f ./8led.o
+                                 0x73 (size before relaxing)
+ .debug_str     0x00000113       0x29 ./at24C04.o
+                                 0xec (size before relaxing)
+ .debug_str     0x0000013c        0xe ./iic.o
+                                0x12c (size before relaxing)
+ .debug_str     0x0000014a       0x26 ./main.o
+                                 0xd3 (size before relaxing)
+ .debug_str     0x00000170       0x54 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+                                 0xf2 (size before relaxing)
+ .debug_str     0x000001c4       0x88 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+                                0x155 (size before relaxing)
+
+.comment        0x00000000       0x2a
+ .comment       0x00000000       0x2a ./commonEclipse/system.o
+                                 0x2b (size before relaxing)
+ .comment       0x00000000       0x2b ./8led.o
+ .comment       0x00000000       0x2b ./at24C04.o
+ .comment       0x00000000       0x2b ./iic.o
+ .comment       0x00000000       0x2b ./main.o
+ .comment       0x00000000       0x2b C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .comment       0x00000000       0x2b C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.ARM.attributes
+                0x00000000       0x30
+ .ARM.attributes
+                0x00000000       0x32 ./commonEclipse/system.o
+ .ARM.attributes
+                0x00000032       0x32 ./8led.o
+ .ARM.attributes
+                0x00000064       0x32 ./at24C04.o
+ .ARM.attributes
+                0x00000096       0x32 ./iic.o
+ .ARM.attributes
+                0x000000c8       0x22 ./init.o
+ .ARM.attributes
+                0x000000ea       0x32 ./main.o
+ .ARM.attributes
+                0x0000011c       0x32 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .ARM.attributes
+                0x0000014e       0x32 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
+
+.debug_frame    0x00000000      0x35c
+ .debug_frame   0x00000000       0x70 ./commonEclipse/system.o
+ .debug_frame   0x00000070       0x50 ./8led.o
+ .debug_frame   0x000000c0       0x50 ./at24C04.o
+ .debug_frame   0x00000110       0xf0 ./iic.o
+ .debug_frame   0x00000200       0x30 ./main.o
+ .debug_frame   0x00000230       0x50 C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(at24C04.o)
+ .debug_frame   0x00000280       0xdc C:\hlocal\EclipseARMwspace\practica3\commonEclipse\libsedLib.a(iic.o)
